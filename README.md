@@ -38,7 +38,7 @@ const url = urlPath`/users/${"alice/bob"}`;
 ## Install
 
 ```
-npm install tagged-template-ts
+npm install && npm run build
 ```
 
 ## The bundled tags
