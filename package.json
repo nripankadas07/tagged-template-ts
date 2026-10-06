@@ -1,14 +1,20 @@
 {
   "name": "tagged-template-ts",
   "version": "0.1.0",
-  "description": "Type-safe tagged template helpers for TypeScript — html, sql, dedent, oneline, raw, regex, urlPath, csv with a tag() factory.",
+  "description": "Type-safe tagged template helpers for TypeScript \u2014 html, sql, dedent, oneline, raw, regex, urlPath, csv with a tag() factory.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "src", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "pretest": "node --test dependency-audit.test.cjs"
   },
   "keywords": [
     "tagged-template",
@@ -23,7 +29,9 @@
   ],
   "author": "Nripanka Das",
   "license": "MIT",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
@@ -34,5 +42,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/nripankadas07/tagged-template-ts"
+  },
+  "overrides": {
+    "js-yaml": {
+      "argparse": "2.0.1"
+    }
   }
 }
